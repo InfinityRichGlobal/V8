@@ -108,7 +108,13 @@
   </style>
 </head>
 <body>
-
+  <div class="container">
+    <div class="login-container">
+      <h1>ป้ายทีม ครูส้มโอ ส่งออก AEC</h1>
+      <input type="password" placeholder="Password" id="password" />
+      <button onclick="login()">Login</button>
+    </div>
+  </div>
 
   <div id="content">
     <iframe src="https://script.google.com/macros/s/AKfycbxsZkgmFFeiMgtUSLLRDv3_35U_OEk7cQV34WbNB_feltGaCWMio_os85_TKQQckXs/exec"></iframe>
@@ -116,7 +122,15 @@
   </div>
 
   <script>
-
+    function login() {
+      var password = document.getElementById("password").value;
+      if (password === "v8") {
+        document.querySelector(".container").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      } else {
+        alert("Invalid password");
+      }
+    }
 
     document.getElementById('homeBtn').addEventListener('click', () => {
       document.querySelector('iframe').src = 'https://script.google.com/macros/s/AKfycbxsZkgmFFeiMgtUSLLRDv3_35U_OEk7cQV34WbNB_feltGaCWMio_os85_TKQQckXs/exec';
